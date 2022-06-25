@@ -4,7 +4,6 @@ import Footer from './components/Footer';
 import Note from './components/Note';
 import './App.css';
 import CreateNoteArea from './components/CreateNoteArea';
-import notes from './notesdb';
 
 
 function App() {

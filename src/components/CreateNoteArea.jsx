@@ -21,7 +21,7 @@ const NoteArea = (props) => {
         setInputNote({
             title: "",
             content: ""
-        })
+        });
         e.preventDefault();
     }
     return (
