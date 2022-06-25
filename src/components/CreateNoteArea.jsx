@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const NoteArea = () => {
+const NoteArea = (props) => {
     const [inputNote, setInputNote] = useState({
         title: "",
         content: ""
@@ -15,6 +15,14 @@ const NoteArea = () => {
                 [name]: value
             }
         });
+    }
+    function submitNote(e){
+        props.addNote(inputNote);
+        setInputNote({
+            title: "",
+            content: ""
+        })
+        e.preventDefault();
     }
     return (
         <div>
@@ -32,7 +40,7 @@ const NoteArea = () => {
                     placeholder='Take a note' 
                     rows="3" 
                 />
-                <button> Add </button>
+                <button onClick={submitNote}> Add </button>
             </form>
         </div>
     );
