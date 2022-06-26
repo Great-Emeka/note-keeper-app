@@ -10,9 +10,13 @@ function App() {
   const[notes, setNotes] = useState([]);
 
   function addNote(newNote){
-    setNotes( (prevNotes) =>{
-      return [...prevNotes, newNote]
-    })
+    if(newNote.title && newNote.content !== ""){
+      setNotes( (prevNotes) =>{
+        return [...prevNotes, newNote]
+      });
+    }else{
+      console.log("Ooops!!! Eneter a title & some note")
+    }
   };
 
   function deleteNote(id){

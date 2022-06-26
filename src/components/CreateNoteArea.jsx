@@ -27,7 +27,7 @@ const CreateNoteArea = (props) => {
     }
     return (
         <div>
-            <form>
+            <form className='create-note'>
                 <input
                     name='title'
                     value={inputNote.title}
