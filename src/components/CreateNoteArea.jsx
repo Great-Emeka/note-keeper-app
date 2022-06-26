@@ -27,7 +27,7 @@ const CreateNoteArea = (props) => {
     }
     return (
         <div>
-            <p className='error-message'>{props.error}</p>
+            <p className='error-message'>{props.errorMessage}</p>
             <form className='create-note'>
                 <input
                     name='title'

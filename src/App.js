@@ -32,7 +32,7 @@ function App() {
     <div className='container'>
       <Header />
       <div className='keeper-app-body'>
-        <CreateNoteArea addNote={addNote} error={error}/>
+        <CreateNoteArea addNote={addNote} errorMessage={error}/>
         {notes.map((noteItem, index) =>
             <Note
               id={index}
