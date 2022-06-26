@@ -8,14 +8,16 @@ import CreateNoteArea from './components/CreateNoteArea';
 
 function App() {
   const[notes, setNotes] = useState([]);
+  const [error, setError] = useState("");
 
   function addNote(newNote){
     if(newNote.title && newNote.content !== ""){
       setNotes( (prevNotes) =>{
         return [...prevNotes, newNote]
       });
+      setError(""); //This hides the error message if it's initially displayed
     }else{
-      console.log("Ooops!!! Eneter a title & some note")
+      setError("Ooops!!! Enter a title & some note...");
     }
   };
 
@@ -30,7 +32,7 @@ function App() {
     <div className='container'>
       <Header />
       <div className='keeper-app-body'>
-        <CreateNoteArea addNote={addNote}/>
+        <CreateNoteArea addNote={addNote} error={error}/>
         {notes.map((noteItem, index) =>
             <Note
               id={index}
