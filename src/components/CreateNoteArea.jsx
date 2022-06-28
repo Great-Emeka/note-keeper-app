@@ -30,6 +30,7 @@ const CreateNoteArea = (props) => {
         });
         e.preventDefault();
     }
+    
     function expand() {
         setExpanded(true);
     }
@@ -53,11 +54,11 @@ const CreateNoteArea = (props) => {
                     placeholder='Take a note...' 
                     rows={isExpanded ? 3 : 1} 
                 />
-                <zoom in={isExpanded} >
+                <Zoom in={isExpanded} >
                     <Fab onClick={submitNote}>
                         <AddIcon />
                     </Fab>
-                </zoom>
+                </Zoom>
             </form>
         </div>
     );

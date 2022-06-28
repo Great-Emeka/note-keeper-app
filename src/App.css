@@ -78,8 +78,9 @@
   margin: 30px auto 20px auto;
   background: #fff;
   padding: 15px;
+  border: 3px solid #f5ba13;
   border-radius: 7px;
-  box-shadow: 0 1px 5px rgb(138, 137, 137);
+  box-shadow: 0 5px 10px #f5ba13;
 }
 form.create-note input,
 form.create-note textarea {
