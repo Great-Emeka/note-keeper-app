@@ -28,6 +28,10 @@
    color: #ccc;
  }
 
+ .fav-icon{
+  color: red;
+ }
+
  /* Rules for the notes */
  .keeper-app-body {
    margin: 0 16px;
@@ -50,8 +54,8 @@
 
  .note p {
    font-size: 1.1em;
-   margin-bottom: 10px;
-   white-space: pre-wrap;
+   margin-bottom: 6px;
+   /* white-space: pre-wrap; */
    word-wrap: break-word;
  }
  .note button {
@@ -67,9 +71,11 @@
 }
 
 .error-message{
-  color: red;
+  color: #fff;
+  font-family: "McLaren", cursive;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 15px;
+  margin-bottom: 0px;
 }
 
  form.create-note {
