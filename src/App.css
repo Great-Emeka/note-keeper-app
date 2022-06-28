@@ -11,6 +11,10 @@
    font-weight: 200;
  }
 
+ .header-icon{
+  margin-right: 5px;
+ }
+
  /* Footer Style rules */
  footer {
    position: absolute;
@@ -22,6 +26,10 @@
 
  footer p {
    color: #ccc;
+ }
+
+ .fav-icon{
+  color: red;
  }
 
  /* Rules for the notes */
@@ -46,8 +54,8 @@
 
  .note p {
    font-size: 1.1em;
-   margin-bottom: 10px;
-   white-space: pre-wrap;
+   margin-bottom: 6px;
+   /* white-space: pre-wrap; */
    word-wrap: break-word;
  }
  .note button {
@@ -62,17 +70,26 @@
   outline: none;
 }
 
- form {
+.error-message{
+  color: #fff;
+  font-family: "McLaren", cursive;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+
+ form.create-note {
   position: relative;
   width: 480px;
   margin: 30px auto 20px auto;
   background: #fff;
   padding: 15px;
+  border: 3px solid #f5ba13;
   border-radius: 7px;
-  box-shadow: 0 1px 5px rgb(138, 137, 137);
+  box-shadow: 0 5px 10px #f5ba13;
 }
-form input,
-form textarea {
+form.create-note input,
+form.create-note textarea {
   width: 100%;
   border: none;
   padding: 4px;
@@ -81,7 +98,7 @@ form textarea {
   font-family: inherit;
   resize: none;
 }
-form button {
+form.create-note button {
   position: absolute;
   right: 18px;
   bottom: -18px;

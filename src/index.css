@@ -8,7 +8,9 @@ html {
   font-family: "Montserrat", sans-serif;
 }
 body {
-  background: #eee;
+  /* background: #eee; */
+  background-color: #8f6600;
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
 }
 
 
