@@ -11,6 +11,10 @@
    font-weight: 200;
  }
 
+ .header-icon{
+  margin-right: 5px;
+ }
+
  /* Footer Style rules */
  footer {
    position: absolute;
