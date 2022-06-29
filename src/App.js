@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Note from './components/Note';
@@ -28,6 +28,19 @@ function App() {
       });
     });
   }
+
+  // Implementing localStorage with useEffect Hooks
+  useEffect(() => {
+    const notes = JSON.parse(localStorage.getItem('notes'));
+    if (notes) {
+     setNotes(notes);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('notes', JSON.stringify(notes));
+  }, [notes]);
+
   return (
     <div className='container'>
       <Header />
