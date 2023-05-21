@@ -5,26 +5,39 @@ import Note from './components/Note';
 import './App.css';
 import CreateNoteArea from './components/CreateNoteArea';
 
-
 function App() {
-  const[notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState([]);
   const [error, setError] = useState("");
 
-  function addNote(newNote){
-    if(newNote.title && newNote.content !== ""){
-      setNotes( (prevNotes) =>{
-        return [...prevNotes, newNote]
+  function addNote(newNote) {
+    if (newNote.title && newNote.content !== "") {
+      setNotes((prevNotes) => {
+        return [...prevNotes, newNote];
       });
       setError(""); //This hides the error message if it's initially displayed
-    }else{
+    } else {
       setError("Ooops!!! Enter a title & some note...");
     }
-  };
+  }
 
-  function deleteNote(id){
-    setNotes( (prevNotes) =>{
-      return prevNotes.filter((noteItem, index) =>{
-        return index !== id
+  function deleteNote(id) {
+    setNotes((prevNotes) => {
+      return prevNotes.filter((noteItem, index) => {
+        return index !== id;
+      });
+    });
+  }
+
+  function updateNote(id, updatedNote) {
+    setNotes((prevNotes) => {
+      return prevNotes.map((noteItem, index) => {
+        if (index === id) {
+          return {
+            ...noteItem,
+            ...updatedNote
+          };
+        }
+        return noteItem;
       });
     });
   }
@@ -33,7 +46,7 @@ function App() {
   useEffect(() => {
     const notes = JSON.parse(localStorage.getItem('notes'));
     if (notes) {
-     setNotes(notes);
+      setNotes(notes);
     }
   }, []);
 
@@ -45,17 +58,17 @@ function App() {
     <div className='container'>
       <Header />
       <div className='keeper-app-body'>
-        <CreateNoteArea addNote={addNote} errorMessage={error}/>
+        <CreateNoteArea addNote={addNote} errorMessage={error} />
         {notes.map((noteItem, index) =>
-            <Note
-              id={index}
-              key={index}
-              title={noteItem.title}
-              content={noteItem.content}
-              deleteNote = {deleteNote}
-            />
-          )
-        }
+          <Note
+            id={index}
+            key={index}
+            title={noteItem.title}
+            content={noteItem.content}
+            deleteNote={deleteNote}
+            updateNote={updateNote} // Pass the updateNote function as a prop
+          />
+        )}
       </div>
       <Footer />
     </div>
