@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
+import Modal from "./Modal";
+import Backdrop from './Backdrop';
 
 const Note = (props) => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   const [editMode, setEditMode] = useState(false);
   const [noteContent, setNoteContent] = useState({
     title: props.title,
     content: props.content
   });
 
-  function handleDelete() {
-    props.deleteNote(props.id);
-  }
+  const handleDelete = () => {
+    setModalIsOpen(true);
+    // props.deleteNote(props.note.id);
+  };
 
   function handleEdit() {
     setEditMode(true);
@@ -30,6 +34,16 @@ const Note = (props) => {
     setEditMode(false);
   }
 
+  const handleRemoveBackdrop = () =>{
+    setModalIsOpen(false)
+  }
+
+   //Does the actual deleting upon clicking confirm 
+   const handleConfirmDelete = () => {
+    props.deleteNote(props.id);
+    setModalIsOpen(false);
+  };
+
   if (editMode) {
     return (
       <div className='note'>
@@ -46,7 +60,7 @@ const Note = (props) => {
           value={noteContent.content}
           onChange={handleInputChange}
         />
-        <button onClick={handleUpdate} style={{ color: '#f5ba13', border: 'none', width: '50px', height: '30px'}}>Update</button>
+        <button onClick={handleUpdate} className='note-button' style={{ color: '#f5ba13', border: 'none', width: '50px', height: '30px'}}>Update</button>
       </div>
     );
   }
@@ -56,13 +70,17 @@ const Note = (props) => {
       <h1>{props.title}</h1>
       <p>{props.content}</p>
       <div className='note-actions'>
-        <button onClick={handleEdit}>
+        <button onClick={handleEdit} className='note-button'>
           <EditIcon />
         </button>
-        <button onClick={handleDelete}>
+        <button onClick={handleDelete} className='note-button'>
           <DeleteIcon />
         </button>
       </div>
+      {modalIsOpen && (
+        <Modal onCancel={handleRemoveBackdrop} onConfirm={handleConfirmDelete}/>
+      )}
+      {modalIsOpen && <Backdrop onCancel={handleRemoveBackdrop} />}
     </div>
   );
 }

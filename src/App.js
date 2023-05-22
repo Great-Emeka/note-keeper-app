@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Note from './components/Note';
 import './App.css';
 import CreateNoteArea from './components/CreateNoteArea';
+import Modal from './components/Modal';
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -69,6 +70,7 @@ function App() {
             updateNote={updateNote} // Pass the updateNote function as a prop
           />
         )}
+        {/* <Modal /> */}
       </div>
       <Footer />
     </div>
