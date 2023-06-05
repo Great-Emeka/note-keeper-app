@@ -1,0 +1,13 @@
+{
+  "main.css": "/note-keeper-app/static/css/main.b376893b.chunk.css",
+  "main.js": "/note-keeper-app/static/js/main.b4149911.chunk.js",
+  "main.js.map": "/note-keeper-app/static/js/main.b4149911.chunk.js.map",
+  "static/js/1.c95dbf02.chunk.js": "/note-keeper-app/static/js/1.c95dbf02.chunk.js",
+  "static/js/1.c95dbf02.chunk.js.map": "/note-keeper-app/static/js/1.c95dbf02.chunk.js.map",
+  "runtime~main.js": "/note-keeper-app/static/js/runtime~main.1e98b423.js",
+  "runtime~main.js.map": "/note-keeper-app/static/js/runtime~main.1e98b423.js.map",
+  "static/css/main.b376893b.chunk.css.map": "/note-keeper-app/static/css/main.b376893b.chunk.css.map",
+  "index.html": "/note-keeper-app/index.html",
+  "precache-manifest.2d5b50d6be7aa480b23384f5896faddc.js": "/note-keeper-app/precache-manifest.2d5b50d6be7aa480b23384f5896faddc.js",
+  "service-worker.js": "/note-keeper-app/service-worker.js"
+}
